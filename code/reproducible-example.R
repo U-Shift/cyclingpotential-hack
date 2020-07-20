@@ -1,6 +1,7 @@
 # Aim: test R installations have the necessary packages installed
 
-remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"))
+install.packages("remotes", quiet = TRUE)
+remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"), quiet = TRUE)
 library(tmap)
 tmap_mode("view")
 

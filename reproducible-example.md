@@ -3,35 +3,8 @@
 ```r
 # Aim: test R installations have the necessary packages installed
 
-remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"))
-```
-
-```
-## Skipping install of 'sf' from a cran remote, the SHA1 (0.9-5) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'stplanr' from a cran remote, the SHA1 (0.6.2) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'pct' from a cran remote, the SHA1 (0.4.1) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'tmap' from a cran remote, the SHA1 (3.1) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'dplyr' from a cran remote, the SHA1 (1.0.0) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```r
+install.packages("remotes", quiet = TRUE)
+remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"), quiet = TRUE)
 library(tmap)
 tmap_mode("view")
 ```
@@ -67,6 +40,10 @@ tm_shape(desire_lines) +
 ```
 
 ```
+## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 7.0.0
+```
+
+```
 ## Legend for line widths not available in view mode.
 ```
 
@@ -81,23 +58,23 @@ rnet = overline(routes, "Bike")
 ```
 
 ```
-## 2020-07-20 16:48:21 constructing segments
+## 2020-07-20 20:58:48 constructing segments
 ```
 
 ```
-## 2020-07-20 16:48:21 building geometry
+## 2020-07-20 20:58:48 building geometry
 ```
 
 ```
-## 2020-07-20 16:48:22 simplifying geometry
+## 2020-07-20 20:58:48 simplifying geometry
 ```
 
 ```
-## 2020-07-20 16:48:22 aggregating flows
+## 2020-07-20 20:58:48 aggregating flows
 ```
 
 ```
-## 2020-07-20 16:48:22 rejoining segments into linestrings
+## 2020-07-20 20:58:49 rejoining segments into linestrings
 ```
 
 ```r
@@ -115,6 +92,26 @@ tm_shape(rnet) +
 # check analysis with dplyr and estimation of cycling uptake with pct function
 library(pct)
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 u3 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/routes_integers_cs_balanced.geojson"
 route_segments_balanced = sf::read_sf(u3)
 routes_balanced = route_segments_balanced %>% 
@@ -165,23 +162,23 @@ rnet_balanced = overline(routes_balanced, "Potential")
 ```
 
 ```
-## 2020-07-20 16:48:27 constructing segments
+## 2020-07-20 20:58:52 constructing segments
 ```
 
 ```
-## 2020-07-20 16:48:27 building geometry
+## 2020-07-20 20:58:52 building geometry
 ```
 
 ```
-## 2020-07-20 16:48:27 simplifying geometry
+## 2020-07-20 20:58:53 simplifying geometry
 ```
 
 ```
-## 2020-07-20 16:48:27 aggregating flows
+## 2020-07-20 20:58:53 aggregating flows
 ```
 
 ```
-## 2020-07-20 16:48:28 rejoining segments into linestrings
+## 2020-07-20 20:58:53 rejoining segments into linestrings
 ```
 
 ```r
