@@ -11,15 +11,51 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Cycling Potential hackathon
+# Cycling Potential Hackathon: Lisbon
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-A hackathon on international methods for estimating cycling potential, based on a case study in Lisbon.  
-Further details will come soon.
+Welcome to the Cycling Potential Hackathon, Lisbon (CPHL), hackathon on reproducible methods for estimating cycling potential, based on a case study of Lisbon, Portugal. 
+This [GitHub repo](https://guides.github.com/activities/hello-world/) contains everything needed to get started with modelling cycling potential, including example data and reproducible code.
+
+Interested in getting involved?
+Here's some [key information](https://en.wikipedia.org/wiki/Five_Ws) that will help decide if this is for you and register to participate if so!
+
+## Who?
+
+**The hackathon is organised** by Rosa Felix of the [University of Lisbon](http://ushift.tecnico.ulisboa.pt/team-rosa-felix/)  and Robin Lovelace of the [University of Leeds](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace), who were awarded funding from the Portuguese Association of Researchers and Students in the United Kingdom's Bilateral Research Fund ([PARSUK BRF](https://en.parsuk.pt/brf)) to develop a '[PCT Portugal](http://ushift.tecnico.ulisboa.pt/pct-portugal/)' project building on methods used to develop the Propensity to Cycle Tool ([PCT](https://www.pct.bike/)), which is based on open source software.
+
+**Attendees** are expected to have knowledge of transport planning interventions to enable cycling uptake and/or technical skills needed to analyse, interactively visualise and develop scenarios of cycling uptake.
+Experience with the statistical programming language R will be particularly useful, although anyone with experience of front-end or back-end development with open source software will be very welcome.
+**Working knowledge of GitHub is highly recommended for collaboration during the hackathon.**
+
+## What?
+
+A one day participatory code-focussed hackathon.
+The morning will be dedicated to getting up-to-speed with the input data.
+The afternoon will be dedicated to the hackathon!
+
+## When?
+
+Monday 21^st^ September, 2020, 10:00 to 16:00.
+
+## Where?
+
+Online, we will send a conference link to participants.
+
+## Why?
+
+There is a great need for transparent and actionable evidence to support investment in sustainable transport futures, and cycling uptake in particular.
+
+## Before signing-up
+
+Please take a read of the information below and take a look at (and ideal test) the exercises in the [PCT Training course](https://itsleeds.github.io/pct/articles/pct_training.html).
+
+If you plan to use R to develop solutions, please ensure you can reproduce the results of the code shown here.
 
 ## Input datasets
+
 Initial datasets, `.geojson`  
 
 1. Desire lines between cities  
@@ -30,19 +66,23 @@ Initial datasets, `.geojson`
  
 [Releases](https://github.com/U-Shift/cyclingpotential-hack/releases/)
 
-# Topics
-Here are a couple of ideas...
+## Topics
+
+We have developed ideas for a few hack topics:
 
 * Cycling uptake functions  
 * Estimating flow between Origins and Destinations using spatial interaction models  
 * Routing algorithms and routing services - hilliness integration?  
 * Use of counting points data  
 * Minimum requirements for a PCT at any place
+* How cycling responds locally to different intervention types, e.g. based on cycle counter data
+
+Any further ideas very welcome, feel free to bring your own!
 
 ## How to sign up
 
 To sign-up complete [this](link-to-form) application form.
 
-## When?
+## Any questions?
 
-21st September, 10am (WEST)
+Feel free to ask any questions related to this hackathon on the [issue tracker](https://github.com/U-Shift/cyclingpotential-hack/issues).
