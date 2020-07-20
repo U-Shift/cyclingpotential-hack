@@ -36,10 +36,13 @@ Here are a couple of ideas...
 * Cycling uptake functions  
 * Estimating flow between Origins and Destinations using spatial interaction models  
 * Routing algorithms and routing services - hilliness integration?  
-* Use of counting points data
+* Use of counting points data  
+* Minimum requirements for a PCT at any place
 
 ## How to sign up
 
 To sign-up complete [this](link-to-form) application form.
 
+## When?
 
+21st September, 10am (WEST)
