@@ -16,8 +16,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-Welcome to the Cycling Potential Hackathon, Lisbon (CPHL), hackathon on reproducible methods for estimating cycling potential, based on a case study of Lisbon, Portugal. 
-This [GitHub repo](https://guides.github.com/activities/hello-world/) contains everything needed to get started with modelling cycling potential, including example data and reproducible code.
+Welcome to the Cycling Potential Hackathon, Lisbon (CPHL), on reproducible methods for estimating cycling potential, based on a case study of Lisbon, Portugal.   
+![](https://user-images.githubusercontent.com/1825120/87960376-21e40a00-caac-11ea-8103-5948dfcd3a25.jpg)  
+This [GitHub repo](https://github.com/U-Shift/cyclingpotential-hack) contains everything needed to get started with modelling cycling potential, including example data and reproducible code.
 
 Interested in getting involved?
 Here's some [key information](https://en.wikipedia.org/wiki/Five_Ws) that will help decide if this is for you and register to participate if so!
@@ -38,7 +39,7 @@ The afternoon will be dedicated to the hackathon!
 
 ## When?
 
-Monday 21^st^ September, 2020, 10:00 to 16:00.
+Monday 21^st^ September, 2020, 10:00 to 16:00 (WET, UTC±0)
 
 ## Where?
 
@@ -52,7 +53,7 @@ There is a great need for transparent and actionable evidence to support investm
 
 Please take a read of the information below and take a look at (and ideal test) the exercises in the [PCT Training course](https://itsleeds.github.io/pct/articles/pct_training.html).
 
-If you plan to use R to develop solutions, please ensure you can reproduce the results of the code shown here.
+If you plan to use R to develop solutions, please ensure you can reproduce the results of the code shown here: [reproducible-example.R](https://github.com/U-Shift/cyclingpotential-hack/blob/master/code/reproducible-example.R). If your output looks like [this](https://github.com/U-Shift/cyclingpotential-hack/blob/master/reproducible-example.md) congratualtions :tada:🎉 you have the necessary packages installed.
 
 ## Input datasets
 
@@ -64,7 +65,7 @@ Initial datasets, `.geojson`
     - Balanced  
     - Quietest  
  
-[Releases](https://github.com/U-Shift/cyclingpotential-hack/releases/)
+[Go to Releases](https://github.com/U-Shift/cyclingpotential-hack/releases/)
 
 ## Topics
 
