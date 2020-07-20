@@ -24,10 +24,9 @@ Initial datasets, `.geojson`
 
 1. Desire lines between cities  
 2. Cycling routes from [cyclestreets.net](cyclestreets.net)
-
-  2.1. Fastest  
-  2.2. Balanced  
-  2.3. Quietest  
+    - Fastest  
+    - Balanced  
+    - Quietest  
  
 [Releases](https://github.com/U-Shift/cyclingpotential-hack/releases/)
 
@@ -38,5 +37,9 @@ Here are a couple of ideas...
 * Estimating flow between Origins and Destinations using spatial interaction models  
 * Routing algorithms and routing services - hilliness integration?  
 * Use of counting points data
+
+## How to sign up
+
+To sign-up complete [this](link-to-form) application form.
 
 
