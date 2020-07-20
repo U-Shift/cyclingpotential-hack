@@ -5,15 +5,7 @@
 
 install.packages("remotes", quiet = TRUE)
 remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"), quiet = TRUE)
-library(tmap)
-tmap_mode("view")
-```
 
-```
-## tmap mode set to interactive viewing
-```
-
-```r
 # test the sf package
 u1 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/city_centroids.geojson"
 centroids = sf::read_sf(u1)
@@ -55,29 +47,6 @@ library(stplanr)
 u3 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/routes_integers_cs_balanced.geojson"
 routes = sf::read_sf(u3)
 rnet = overline(routes, "Bike") 
-```
-
-```
-## 2020-07-20 20:58:48 constructing segments
-```
-
-```
-## 2020-07-20 20:58:48 building geometry
-```
-
-```
-## 2020-07-20 20:58:48 simplifying geometry
-```
-
-```
-## 2020-07-20 20:58:48 aggregating flows
-```
-
-```
-## 2020-07-20 20:58:49 rejoining segments into linestrings
-```
-
-```r
 tm_shape(rnet) +
   tm_lines(lwd = "Bike", scale = 5, col = "Bike", palette = "viridis")
 ```
@@ -159,29 +128,6 @@ routes_balanced$Potential = pct::uptake_pct_godutch(
 
 ```r
 rnet_balanced = overline(routes_balanced, "Potential")
-```
-
-```
-## 2020-07-20 20:58:52 constructing segments
-```
-
-```
-## 2020-07-20 20:58:52 building geometry
-```
-
-```
-## 2020-07-20 20:58:53 simplifying geometry
-```
-
-```
-## 2020-07-20 20:58:53 aggregating flows
-```
-
-```
-## 2020-07-20 20:58:53 rejoining segments into linestrings
-```
-
-```r
 b = c(0, 0.5, 1, 2, 3, 8) * 1e4
 tm_shape(rnet_balanced) +
   tm_lines(lwd = "Potential", scale = 9, col = "Potential", palette = "viridis", breaks = b)
