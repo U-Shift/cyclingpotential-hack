@@ -3,44 +3,9 @@
 ```r
 # Aim: test R installations have the necessary packages installed
 
-remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"))
-```
+install.packages("remotes", quiet = TRUE)
+remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"), quiet = TRUE)
 
-```
-## Skipping install of 'sf' from a cran remote, the SHA1 (0.9-5) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'stplanr' from a cran remote, the SHA1 (0.6.2) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'pct' from a cran remote, the SHA1 (0.4.1) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'tmap' from a cran remote, the SHA1 (3.1) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```
-## Skipping install of 'dplyr' from a cran remote, the SHA1 (1.0.0) has not changed since last install.
-##   Use `force = TRUE` to force installation
-```
-
-```r
-library(tmap)
-tmap_mode("view")
-```
-
-```
-## tmap mode set to interactive viewing
-```
-
-```r
 # test the sf package
 u1 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/city_centroids.geojson"
 centroids = sf::read_sf(u1)
@@ -67,6 +32,10 @@ tm_shape(desire_lines) +
 ```
 
 ```
+## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 7.0.0
+```
+
+```
 ## Legend for line widths not available in view mode.
 ```
 
@@ -78,29 +47,6 @@ library(stplanr)
 u3 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/routes_integers_cs_balanced.geojson"
 routes = sf::read_sf(u3)
 rnet = overline(routes, "Bike") 
-```
-
-```
-## 2020-07-20 16:48:21 constructing segments
-```
-
-```
-## 2020-07-20 16:48:21 building geometry
-```
-
-```
-## 2020-07-20 16:48:22 simplifying geometry
-```
-
-```
-## 2020-07-20 16:48:22 aggregating flows
-```
-
-```
-## 2020-07-20 16:48:22 rejoining segments into linestrings
-```
-
-```r
 tm_shape(rnet) +
   tm_lines(lwd = "Bike", scale = 5, col = "Bike", palette = "viridis")
 ```
@@ -115,6 +61,26 @@ tm_shape(rnet) +
 # check analysis with dplyr and estimation of cycling uptake with pct function
 library(pct)
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 u3 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/routes_integers_cs_balanced.geojson"
 route_segments_balanced = sf::read_sf(u3)
 routes_balanced = route_segments_balanced %>% 
@@ -162,29 +128,6 @@ routes_balanced$Potential = pct::uptake_pct_godutch(
 
 ```r
 rnet_balanced = overline(routes_balanced, "Potential")
-```
-
-```
-## 2020-07-20 16:48:27 constructing segments
-```
-
-```
-## 2020-07-20 16:48:27 building geometry
-```
-
-```
-## 2020-07-20 16:48:27 simplifying geometry
-```
-
-```
-## 2020-07-20 16:48:27 aggregating flows
-```
-
-```
-## 2020-07-20 16:48:28 rejoining segments into linestrings
-```
-
-```r
 b = c(0, 0.5, 1, 2, 3, 8) * 1e4
 tm_shape(rnet_balanced) +
   tm_lines(lwd = "Potential", scale = 9, col = "Potential", palette = "viridis", breaks = b)

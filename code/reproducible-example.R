@@ -1,8 +1,7 @@
 # Aim: test R installations have the necessary packages installed
 
-remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"))
-library(tmap)
-tmap_mode("view")
+install.packages("remotes", quiet = TRUE)
+remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"), quiet = TRUE)
 
 # test the sf package
 u1 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/city_centroids.geojson"
