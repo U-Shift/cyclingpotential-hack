@@ -75,7 +75,7 @@ Any further ideas very welcome, feel free to bring your own!
 How to sign up
 --------------
 
-To sign-up complete [this](link-to-form) application form.
+To sign-up complete [this](https://ushift.tecnico.ulisboa.pt/~ushift.daemon/limesurvey/629464) application form.
 
 Any questions?
 --------------
