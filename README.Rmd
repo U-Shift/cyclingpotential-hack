@@ -29,7 +29,7 @@ Here's some [key information](https://en.wikipedia.org/wiki/Five_Ws) that will h
 
 **Attendees** are expected to have knowledge of transport planning interventions to enable cycling uptake and/or technical skills needed to analyse, interactively visualise and develop scenarios of cycling uptake.
 Experience with the statistical programming language R will be particularly useful, although anyone with experience of front-end or back-end development with open source software will be very welcome.
-**Working knowledge of GitHub is highly recommended for collaboration during the hackathon.**
+**Working knowledge of GitHub is highly recommended for collaboration during the hackathon.** [Here is a tutorial example](https://www.youtube.com/watch?v=iv8rSLsi1xo) to get familiarized with GitHub.
 
 ## What?
 
