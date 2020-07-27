@@ -46,6 +46,7 @@ Please take a read of the information below and take a look at (and ideal test) 
 -   exercises in the [PCT Training course](https://itsleeds.github.io/pct/articles/pct_training.html)
 -   Geocomputation with R online [book](https://geocompr.robinlovelace.net/), especially Chapter [12](https://geocompr.robinlovelace.net/transport.html) on transport data
 -   Papers on the PCT: Lovelace et al. ([2017](https://doi.org/10.5198/jtlu.2016.862)) and Goodman et al. ([2019](https://doi.org/10.1016/j.jth.2019.01.008))
+-   Lisbon cycling potential and bike network analysis: Abad and Van der Meer ([2018](https://doi.org/10.3390/info9110287) - paper); Abad and Van der Meer ([2018](https://github.com/GeoTecINIT/OpenData4OpenCities/blob/master/Presentations/AGILE_2018_Presentation_Abad-vdMeer.pdf) - presentation)
 -   Test out the PCT at <https://www.pct.bike/>
 
 If you plan to use R to develop solutions, please ensure you can reproduce the results of the code shown here: [reproducible-example.R](https://github.com/U-Shift/cyclingpotential-hack/blob/master/code/reproducible-example.R). If your output looks like [this](https://github.com/U-Shift/cyclingpotential-hack/blob/master/reproducible-example.md) congratualtions :tada:🎉 you have the necessary packages installed.
