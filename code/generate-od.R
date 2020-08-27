@@ -54,5 +54,23 @@ hist(desire_lines$Total)
 # desire_lines = desire_lines %>% 
 #   mutate_if(is.numeric, .funs = ~ ./10)
 
-desire_lines = desire_lines %>%
-  mutate(across(Car:Active), .funs = ~ ./10)
+desire_lines_final = desire_lines %>%
+  mutate(across(Car:Total, function(x) {round(x / 10)})) %>% 
+  select(-Active) %>% 
+  mutate(
+    pcycle_current = round(Bike / Total, digits = 2),
+    pactiv_current = round((Bike + Walk) / Total, digits = 2)
+    )
+
+od_data_final = desire_lines_final %>% 
+  sf::st_drop_geometry()
+
+nrow(od_data_final) # 336
+
+readr::write_csv(od_data_final, "od_data_final.csv")
+sf::write_sf(desire_lines_final, "desire_lines_final.geojson")
+
+# ready to upload these as releases?
+piggyback::pb_upload("od_data_final.csv")
+piggyback::pb_upload("desire_lines_final.geojson")
+piggyback::pb_upload("districts.geojson")
