@@ -1,5 +1,8 @@
 # Aim: estimate OD data at district level starting with district (Freguesias) geometries
 
+remotes::install_github("itsleeds/od")
+remotes::install_github("itsleeds/pct")
+
 library(dplyr)
 
 districts = readRDS("~/itsleeds/pct-lisbon2/FREGUESIASgeo.Rds")
@@ -8,7 +11,6 @@ sf::write_sf(districts, "districts.geojson")
 
 # districts = districts[districts$Concelho == "LISBOA", ]
 mapview::mapview(districts)
-sf::st_write()
 
 od_data = od_data %>% 
   filter(DICOFREor11 %in% districts$Dicofre) %>% 
@@ -17,20 +19,11 @@ od_data = od_data %>%
 class(od_data$DICOFREor11)
 class(districts$Dicofre)
 
-# fails, should work:
+# fixed in https://github.com/ITSLeeds/od/commit/967c2e6df9194d5e51ebdd1f642d21429b16c58f
 desire_lines = od::od_to_sf(od_data, districts) 
 
-summary(od_data$DICOFREor11 %in% districts$Dicofre) # TRUE
-summary(od_data$DICOFREde11 %in% districts$Dicofre) # TRUE
-summary(districts$Dicofre %in% od_data$DICOFREor11) # TRUE
-
-od_data$DICOFREor11 = as.character(od_data$DICOFREor11)
-od_data$DICOFREde11 = as.character(od_data$DICOFREde11)
-districts$Dicofre = as.character(districts$Dicofre)
-
-desire_lines = od::od_to_sf(od_data, districts) 
 desire_lines = desire_lines %>% 
-  filter(Total > 1000) %>% 
+  filter(Total > 2000) %>% 
   filter(DICOFREor11 != DICOFREde11)
 mapview::mapview(desire_lines)
 desire_lines$Length_euclidean = as.numeric(sf::st_length(desire_lines))
@@ -52,3 +45,14 @@ cycling_pct_godutch = pct::uptake_pct_godutch_2020(distance = desire_lines$Lengt
                                                        gradient = rep(1, nrow(desire_lines)))
 points(desire_lines$Length_euclidean, cycling_pct_govtarget, col = "green")
 points(desire_lines$Length_euclidean, cycling_pct_godutch, col = "blue")
+
+desire_lines
+summary(desire_lines$Bike)
+sum(desire_lines$Bike == 0) / nrow(desire_lines) # high % of values are 0
+hist(desire_lines$Total)
+
+# desire_lines = desire_lines %>% 
+#   mutate_if(is.numeric, .funs = ~ ./10)
+
+desire_lines = desire_lines %>%
+  mutate(across(Car:Active), .funs = ~ ./10)
