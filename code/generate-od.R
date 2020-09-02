@@ -5,6 +5,7 @@ remotes::install_github("itsleeds/pct")
 
 library(dplyr)
 
+# not reproducible...
 districts = readRDS("~/itsleeds/pct-lisbon2/FREGUESIASgeo.Rds")
 od_data = readRDS("~/itsleeds/pct-lisbon2/TRIPSmode_freguesias.Rds")
 sf::write_sf(districts, "districts.geojson")
