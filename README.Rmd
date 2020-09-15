@@ -61,17 +61,23 @@ Please take a read of the information below and take a look at (and ideal test) 
 
 If you plan to use R to develop solutions, please ensure you can reproduce the results of the code shown here: [reproducible-example.R](https://github.com/U-Shift/cyclingpotential-hack/blob/master/code/reproducible-example.R). If your output looks like [this](https://github.com/U-Shift/cyclingpotential-hack/blob/master/reproducible-example.md) congratualtions :tada:🎉 you have the necessary packages installed.
 
-## Agenda (draft)
+## Agenda
 
-- Introduction to the hackathon: 10:00 - 10:45
-- Talks: methods for modelling cycling networks: 10:45 - 11:15 
-- Live, interactive demo of data: 11:15 - 12:00
-- Topic pitches 12:00 - 12:10
+- Introduction to the hackathon: 10:00 - 10:40 (Rosa Felix and Robin Lovelace)
+<!-- How we started the collaboration, why Lisbon, aims (importance of free, open and participatory solutions) -->
+<!-- Robin on the methods and software underlying the PCT. -->
+- Participant introductions: 10:40 - 10:45 (participants)
+- Talks: methods for modelling cycling networks: 10:45 - 11:15 (Crispin Cooper and Lorena Abad)
+<!-- Crispin to talk about approaches for modelling active transport -->
+<!-- Lorena to talk about cycle network analysis in R -->
+- Live, interactive demo of data and hack rules: 11:15 - 11:45 (Rosa and Robin)
+- Topic pitches 11:45 - 12:00 (participants proposing topics)
 
-Lunch break and finalising teams 12:10 to 13:00
+Lunch break and finalising teams 12:00 to 13:00
 
 - Hackathon 13:00 - 15:30
 - Presentation of results 15:30 - 16:00
+<!-- ? someone to assess / 'most creative', best technicallay? -->
 
 ## Input datasets
 

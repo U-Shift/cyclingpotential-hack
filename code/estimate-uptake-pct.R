@@ -12,8 +12,8 @@ library(sf)
 
 u3 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/1.0/routes_fast.geojson"
 route_segments_fast = sf::read_sf(u3)
-routes_fast = route_segments_fast %>% 
-  group_by(DICOFREor11, DICOFREde11) %>% 
+routes_fast = route_segments_fast %>%
+  group_by(DICOFREor11, DICOFREde11) %>%
   summarise(
     Origem = first(DICOFREor11),
     Destino = first(DICOFREde11),
@@ -22,7 +22,7 @@ routes_fast = route_segments_fast %>%
     Length_fast_m = sum(distances),
     Hilliness_average = mean(gradient_segment),
     Hilliness_90th_percentile = quantile(gradient_segment, probs = 0.9)
-  ) 
+  )
 
 unique(sf::st_geometry_type(routes_fast))
 nrow(routes_fast)
@@ -59,7 +59,7 @@ points(routes_fast$Length_fast_m, pcycle_pct_godutch, col = "green")
 points(routes_fast$Length_fast_m, pcycle_pct_govtarget, col = "grey")
 
 routes_fast$slc_godutch = routes_fast$All * pcycle_pct_godutch
-length(unique(routes_fast$geometry)) 
+length(unique(routes_fast$geometry))
 
 rnet_fast = overline(sf::st_cast(routes_fast, "LINESTRING"), attrib = "slc_godutch")
 rnet_fast$slc_godutch = round(rnet_fast$slc_godutch)
