@@ -1,7 +1,10 @@
 # Aim: test R installations have the necessary packages installed
 
-install.packages("remotes", quiet = TRUE)
-remotes::install_cran(c("sf", "stplanr", "pct", "tmap", "dplyr"), quiet = TRUE)
+pkgs = c("sf", "stplanr", "pct", "tmap", "dplyr")
+# uncomment these lines if line 7 doesn't work...
+# install.packages(pkgs)
+# install.packages("remotes", quiet = TRUE)
+remotes::install_cran(pkgs, quiet = TRUE)
 
 u_od = "od_data_final.csv"
 od_data = read.csv("od_data_final.csv")
