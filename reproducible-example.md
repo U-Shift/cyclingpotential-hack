@@ -8,45 +8,41 @@ pkgs = c("sf", "stplanr", "pct", "tmap", "dplyr")
 # install.packages(pkgs)
 # install.packages("remotes", quiet = TRUE)
 remotes::install_cran(pkgs, quiet = TRUE)
-
-u_od = "od_data_final.csv"
-od_data = read.csv("od_data_final.csv")
 ```
 
 ```
-## Warning in file(file, "rt"): cannot open file 'od_data_final.csv': No such
-## file or directory
+## Installing 1 packages: pct
 ```
 
 ```
-## Error in file(file, "rt"): cannot open the connection
+## Error: Failed to install 'pct' from CRAN:
+##   (converted from warning) package 'pct' is in use and will not be installed
 ```
 
 ```r
+u_od = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/od_data_final.csv"
+od_data = read.csv(u_od)
 head(od_data)
 ```
 
 ```
-## Error in head(od_data): object 'od_data' not found
+##   DICOFREor11 DICOFREde11  Car CarP Bike Walk Other Total Length_euclidean pcycle_current pactiv_current
+## 1      110501      110506  336   44    0    0     6   385         7340.246           0.00           0.00
+## 2      110501      110507  227  109    0    7    18   361         8684.329           0.00           0.02
+## 3      110501      110508 1095  332   41  341   316  2125         3521.560           0.02           0.18
+## 4      110501      111128  172   50    0    1    42   265         6300.765           0.00           0.00
+## 5      110506      110501  319   14    0    0    36   368         7340.246           0.00           0.00
+## 6      110506      110507  594  178    0  126   121  1019         3434.600           0.00           0.12
 ```
 
 ```r
 plot(od_data$Length_euclidean, od_data$pcycle_current)
 ```
 
-```
-## Error in plot(od_data$Length_euclidean, od_data$pcycle_current): object 'od_data' not found
-```
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png)
 
 ```r
 library(sf)
-```
-
-```
-## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 7.0.0
-```
-
-```r
 # test the sf package
 u1 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/centroids.geojson"
 u1b = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/districts.geojson"
@@ -57,14 +53,12 @@ centroids_geo = st_centroid(districts)
 ```
 
 ```
-## Warning in st_centroid.sf(districts): st_centroid assumes attributes are
-## constant over geometries of x
+## Warning in st_centroid.sf(districts): st_centroid assumes attributes are constant over geometries of x
 ```
 
 ```
-## Warning in st_centroid.sfc(st_geometry(x), of_largest_polygon =
-## of_largest_polygon): st_centroid does not give correct centroids for
-## longitude/latitude data
+## Warning in st_centroid.sfc(st_geometry(x), of_largest_polygon = of_largest_polygon): st_centroid does not give correct
+## centroids for longitude/latitude data
 ```
 
 ```r
@@ -72,7 +66,7 @@ plot(centroids$geometry, add = TRUE)
 plot(centroids_geo$geometry, add = TRUE, col = "red")
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png)
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-2.png)
 
 ```r
 # check interactive mapping with tmap
@@ -95,7 +89,7 @@ tm_shape(desire_lines) +
 ## Legend for line widths not available in view mode.
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-2.png)
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-3.png)
 
 ```r
 # check route network generation with stplanr
@@ -103,33 +97,13 @@ library(stplanr)
 u3 = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/routes_fast.geojson"
 routes = sf::read_sf(u3)
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 routes_1 = routes %>% 
   filter(route_number == 1)
 tm_shape(routes_1) +
   tm_lines("gradient_segment", palette = "viridis")
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-3.png)
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-4.png)
 
 ```r
 rnet = overline(routes, "Bike") 
@@ -137,7 +111,7 @@ tm_shape(rnet) +
   tm_lines(scale = 5, col = "Bike", palette = "viridis")
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-4.png)
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-5.png)
 
 ```r
 # check analysis with dplyr and estimation of cycling uptake with pct function
@@ -160,8 +134,7 @@ routes_balanced = route_segments_balanced %>%
 ```
 
 ```
-## Warning in st_cast.sf(., "LINESTRING"): repeating attributes for all sub-
-## geometries for which they may not be constant
+## Warning in st_cast.sf(., "LINESTRING"): repeating attributes for all sub-geometries for which they may not be constant
 ```
 
 ```r
@@ -200,7 +173,7 @@ tm_shape(rnet_balanced) +
 ## Legend for line widths not available in view mode.
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-5.png)
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-6.png)
 
 ```r
 # generate output report
