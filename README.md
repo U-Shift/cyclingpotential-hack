@@ -51,7 +51,7 @@ be dedicated to the hackathon\!
 
 ## When?
 
-Friday 25<sup>th</sup> September, 2020, 10:00 to 16:00 (UTC±1)
+Friday 25<sup>th</sup> September, 2020, 10:00 to 16:00 (UTC±0)
 
 ## Where?
 
@@ -150,3 +150,10 @@ application form.
 
 Feel free to ask any questions related to this hackathon on the [issue
 tracker](https://github.com/U-Shift/cyclingpotential-hack/issues).
+
+## Code of Conduct
+
+Please note that the cyclingpotential-hack project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
