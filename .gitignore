@@ -41,3 +41,7 @@ vignettes/*.pdf
 *.geojson
 *.csv
 *.Rds
+
+
+#participants
+participants/
