@@ -6,8 +6,8 @@ pkgs = c("sf", "stplanr", "pct", "tmap", "dplyr")
 # install.packages("remotes", quiet = TRUE)
 remotes::install_cran(pkgs, quiet = TRUE)
 
-u_od = "od_data_final.csv"
-od_data = read.csv("od_data_final.csv")
+u_od = "https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/od_data_final.csv"
+od_data = read.csv(u_od)
 head(od_data)
 plot(od_data$Length_euclidean, od_data$pcycle_current)
 
