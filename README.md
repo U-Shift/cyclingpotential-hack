@@ -51,7 +51,7 @@ be dedicated to the hackathon\!
 
 ## When?
 
-Friday 25<sup>th</sup> September, 2020, 10:00 to 16:00 (UTC±0)
+Friday 25<sup>th</sup> September, 2020, 10:00 to 16:00 (UTC+1, London and Lisbon time)
 
 ## Where?
 
