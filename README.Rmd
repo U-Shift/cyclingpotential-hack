@@ -90,6 +90,8 @@ Initial datasets, `.geojson`
     - Fastest  
     - Balanced  
     - Quietest  
+3. Bike counts data
+4. Digital Elevation Model for Lisbon area (10m)
  
 [Go to Releases](https://github.com/U-Shift/cyclingpotential-hack/releases/)
 
