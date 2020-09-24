@@ -51,7 +51,11 @@ be dedicated to the hackathon\!
 
 ## When?
 
-Friday 25<sup>th</sup> September, 2020, 10:00 to 16:00 (UTC+1, London and Lisbon time)
+Friday 25<sup>th</sup> September, 2020, 10:00 to 16:00 (London/Lisbon
+time, UTC+1).
+
+See Ical file
+[here](https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/Cycling_Potential_Hackathon_Lisbon.ics).
 
 ## Where?
 
