@@ -87,3 +87,12 @@ tm_shape(rnet_balanced) +
 #   mapview::mapview(single_route)
 # see https://cran.r-project.org/package=cyclestreets and other routing services
 # for other route options, e.g. https://github.com/ropensci/opentripplanner
+
+# sf::write_sf(districts, "districts.shp")
+
+download.file("https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/bike_data_counts.geojson", "bike_data_counts.geojson")
+count_data = sf::read_sf("bike_data_counts.geojson")
+plot(count_data)
+mapview::mapview(count_data)
+
+unzip("/tmp/dem_lisbon_10m.zip")

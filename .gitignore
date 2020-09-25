@@ -44,4 +44,6 @@ vignettes/*.pdf
 
 
 #participants
-participants/
+participants/*.shp
+*.dbf
+*.shx
