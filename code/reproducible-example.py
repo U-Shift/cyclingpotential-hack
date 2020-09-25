@@ -28,7 +28,9 @@ clrs = sns.color_palette()
 fig,ax = plt.subplots()
 
 districts.plot(ax=ax, color=clrs[0], label='Districts')
+plt.show()
 centroids.plot(ax=ax, color=clrs[1], label='Centroids')
+plt.show()
 desire_lines.plot(ax=ax, color=clrs[2], label='Desire Lines')
 routes.plot(ax=ax, color=clrs[3], label='Routes')
 

@@ -16,6 +16,11 @@ output:
 #  - ../vignettes/ref_training.bib
 ---
 
+```{r, eval=FALSE, echo=FALSE}
+cp -Rv hack-slides* ~/blog/rstudio.robinlovelace.io/presentations
+```
+
+
 ```{r setup, include=FALSE, eval=TRUE}
 # get citations
 refs = RefManageR::ReadZotero(group = "418217", .params = list(collection = "JFR868KJ", limit = 100))
@@ -210,7 +215,7 @@ tm_shape(r) +
 
 ### Route networks
 
-```{r, eval=FALSE}
+```{r}
 rnet = stplanr::overline(r, "bicycle")
 plot(rnet, lwd = rnet$bicycle / 10)
 ```
@@ -392,11 +397,11 @@ saveRDS(routes, "routes_car_dependent.Rds")
 <!-- - Import alternative origin-destination datasets and use those as the basis for propensity to cycle analysis for trip purposes other than single stage commutes, encapsulated in the commut layer in the PCT -->
 <!-- - Any other layers/scenarios/hacks: welcome! Comments in this repo's [issue tracker](https://github.com/ITSLeeds/pct/issues) also welcome. -->
 
----
+<!-- --- -->
 
-# References
+<!-- # References -->
 
-```{r, 'refs', results="asis", echo=FALSE}
+```{r, 'refs', results="asis", echo=FALSE, eval=FALSE}
 PrintBibliography(my_bib)
 # RefManageR::WriteBib(my_bib, "refs-geostat.bib")
 ```
