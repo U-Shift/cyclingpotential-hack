@@ -70,7 +70,9 @@ If you plan to use R to develop solutions, please ensure you can reproduce the r
 <!-- Robin on the methods and software underlying the PCT. -->
 - Participant introductions: 10:40 - 10:45 (participants)
 - Talks: methods for modelling cycling networks: 10:45 - 11:15 (Crispin Cooper and Lorena Abad)
-<!-- Crispin to talk about approaches for modelling active transport -->
+    - Check Lorena's presentation and data [here](https://github.com/loreabad6/bna-presentation)
+    
+    <!-- Crispin to talk about approaches for modelling active transport -->
 <!-- Lorena to talk about cycle network analysis in R -->
 - Live, interactive demo of data and hack rules: 11:15 - 11:45 (Rosa and Robin)
 - Topic pitches 11:45 - 12:00 (participants proposing topics)
