@@ -24,3 +24,8 @@ routes_high_cirquity = routes_fast_aggregated %>%
   filter(cirquity > 3)
 nrow(routes_high_cirquity)
 mapview::mapview(routes_high_cirquity)
+
+routes_high_medium = routes_fast_aggregated %>% 
+  filter(cirquity > 2)
+nrow(routes_high_medium)
+mapview::mapview(routes_high_medium)
